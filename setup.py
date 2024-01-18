@@ -8,7 +8,7 @@ from pathlib import Path
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup
 
-HERE = Path(__file__).parent
+HERE = Path('.')
 
 about = {}
 with open(HERE / "src" / "pye57" / "__version__.py") as f:
@@ -107,7 +107,7 @@ setup(
     ext_modules=ext_modules,
     packages=["pye57"],
     package_dir={"": "src"},
-    include_package_data=False,
+    include_package_data=True,
     package_data={"pye57": package_data},
     extras_require={"test": "pytest"},
     license="MIT",
